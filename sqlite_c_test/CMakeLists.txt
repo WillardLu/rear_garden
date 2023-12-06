@@ -13,3 +13,6 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # 设置可执行文件的生成
 add_executable(sqlite_c_test
                src/main.c)
+
+target_link_libraries(sqlite_c_test
+                      sqlite3)

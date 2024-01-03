@@ -1,0 +1,7 @@
+# PostgreSQL数据库连接参数配置文件
+host = "192.168.0.103"
+port = "5432"
+user = "starry"
+password = "t1745.1"
+dbname = "youling"
+sslmode = "disable"

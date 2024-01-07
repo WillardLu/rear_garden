@@ -1,0 +1,9 @@
+# 路由关系表
+routing = [
+  "/",
+  "general1",
+  "homepage",
+  "/task-list",
+  "general1",
+  "task-list",
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>有灵世界</title>
+  <link rel="icon" href="images/icon.png" type="image/icon type">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="javascript" src="js/script.js">
+</head>
+
+<body>
+  <div class="workspace">
+    <!-- 页头 -->
+    <header class="header">
+      <div class="logo">
+        <img src="images/logo.png" alt="有灵世界">
+      </div>
+      <div>
+        <div class="header-right-top-blank"></div>
+        <div class="root-dir">
+          <a href="task-list"> 任务管理</a>
+          <a href=""> 项目管理</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search-input" placeholder="搜索">
+          <button type="submit">搜索</button>
+          <button type="submit">登录</button>
+        </div>
+      </div>
+    </header>
+    <!-- 子目录 -->
+    <div class="sub-dir">
+      {{.sub-dir}}
+    </div>
+    <!-- 内容 -->
+    <div class="contents">
+      <div class="func-menu">
+        <ul>
+          <li><a href="">新增任务</a></li>
+        </ul>
+      </div>
+      <div class="content-area">
+        <div class="task-label">
+          <div class="task-type">
+            A0001
+          </div>
+          <div class="task-name">
+            Test1
+          </div>
+          <div class="label-option">
+            <a href="">修改</a>
+            <a href="">删除</a>
+          </div>
+        </div>
+        <div class="task-label">
+          <div class="task-type">
+            A0002
+          </div>
+          <div class="task-name">
+            Test2
+          </div>
+          <div class="label-option">
+            <a href="">修改</a>
+            <a href="">删除</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="footer">
+      <a href="">关于我们</a>
+      <a href="">联系我们</a>
+    </div>
+  </div>
+</body>
+
+</html>

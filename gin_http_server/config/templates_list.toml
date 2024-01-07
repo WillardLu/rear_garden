@@ -1,0 +1,7 @@
+# 需要读入内存的模板文件清单
+templates = [
+  "general1",
+  "templates/template1.html",
+  "replacement",
+  "templates/replacement.html",
+]

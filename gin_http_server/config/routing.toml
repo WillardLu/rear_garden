@@ -1,9 +1,12 @@
 # 路由关系表
-routing = [
-  "/",
-  "general1",
-  "homepage",
-  "/task-list",
-  "general1",
-  "task-list",
-]
+[[routing]]
+  from = "/"
+  to = "homepage"
+  template = "general1"
+  replacement = "replacement"
+
+[[routing]]
+  from = "/task-list"
+  to = "task-list"
+  template = "general1"
+  replacement = "replacement"

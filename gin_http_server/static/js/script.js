@@ -1,3 +1,10 @@
+// @copyright Copyright 2024 Willard Lu
+// @email willard.lu@outlook.com
+// @language JavaScript
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
 // 打开对话框
 function openDialog() {
   document.querySelector("#myDialog").show();

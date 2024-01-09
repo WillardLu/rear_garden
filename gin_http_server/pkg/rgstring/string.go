@@ -3,7 +3,6 @@ package rgstring
 import "strings"
 
 // 读取两个特定字符串之间的字符串
-// 参数注释：
 //  str    源字符串
 //  start  开头字符串
 //  end    结尾字符串

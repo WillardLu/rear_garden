@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>有灵世界</title>
   <link rel="icon" href="images/icon.png" type="image/icon type">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="javascript" src="js/script.js">
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -51,5 +51,19 @@
     </div>
   </div>
 </body>
+
+<dialog id="myDialog">
+  <h3>新建任务</h3>
+  <p>
+    任务编号：
+    <input type="text" required id="task-number">
+  </p>
+  <p>
+    任务名称：
+    <input type="text" required id="task-name">
+  </p>
+  <button onclick="submitData()">提交</button>
+  <button onclick="closeDialog()">取消</button>
+</dialog>
 
 </html>

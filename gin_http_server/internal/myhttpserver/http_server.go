@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"gin_http_server/pkg/rgstring"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -117,10 +118,10 @@ func setupRouter(router *gin.Engine) int {
 	// 1. 设置静态文件位置
 	router.StaticFS("/css", http.Dir("./static/css"))
 	router.StaticFS("/images", http.Dir("./static/images"))
+	router.StaticFS("/js", http.Dir("./static/js"))
 
 	// 2.读取模板文件内容
 	// 通过这样的方式把模板文件内容读入内存，以减少磁盘读取
-	//var templates []templateList
 	templates := make(map[string]string)
 	if readTemplates(templates) == -1 {
 		return -1
@@ -164,6 +165,15 @@ func setupRouter(router *gin.Engine) int {
 				templates)
 		})
 	}
+	// 设置刷新模板内容的路由，以方便在不用重启路由的情况下进行一些调试维护
+	router.GET("/refresh", func(c *gin.Context) {
+		readTemplates(templates)
+		fmt.Println("\n刷新模板文件完成……")
+	})
+	// 获取来自网页提交的内容（演示用）
+	router.POST("/submit-data", func(c *gin.Context) {
+		handleData(c)
+	})
 	fmt.Println("\n路由设置完成；")
 	return 0
 }
@@ -184,5 +194,18 @@ func replacePlaceHolder(c *gin.Context, r routers, placeHolder []interface{},
 			rgstring.ReadBetween(r.REPLC, bound, bound), -1)
 	}
 	c.Writer.Write([]byte(str))
+	return
+}
+
+// 处理接收到的数据
+func handleData(c *gin.Context) {
+	// 获取来自网页提交的内容
+	str, err := ioutil.ReadAll(c.Request.Body)
+	if err != nil {
+		fmt.Println("读取数据时发生错误：", err)
+		return
+	}
+	fmt.Println(string(str))
+	c.String(http.StatusCreated, string(str))
 	return
 }
